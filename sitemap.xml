@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://eduhub-0317.github.io/EduHub/</loc>
-        <lastmod>2026-10-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub/</loc>
+    <priority>1.0</priority>
+  </url>
 
-    <url>
-        <loc>https://eduhub-0317.github.io/EduHub/class10-science-previous-question-paper.pdf</loc>
-        <lastmod>2026-10-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/carbon.pdf</loc>
+  </url>
 
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/SocialScience-SQP.pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/Trigonometry%20question.pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/CBSE Class 10 PYQs Past 10 Years Solved Papers All Subject.pdf</loc>
+  </url>
+    
+   <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/Class 10 Model question paper 2026 Hindi.pdf</loc>
+  </url> 
+       
+   <url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/Class 10 previous year question Sanskrit.pdf</loc>
+  </url> 
+       
+   <url>
+    <loc>https://eduhub-0317.github.io/EduHub/SAMPLE QUESTION PAPER English class 10.pdf/</loc>
+  </url> 
+       
+   <url>
+    <loc>https://eduhub-0317.github.io/EduHub/Sample Question Paper Maths Class 10.pdf/</loc>
+  </url> 
+       
+   <url>
+    <loc>https://eduhub-0317.github.io/EduHub/Science Class 8 All Chapter Shorts Notes.pdf/</loc>
+  </url> 
+    
 </urlset>
