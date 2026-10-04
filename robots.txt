@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eduhub-0317.github.io/EduHub/sitemap.xml
