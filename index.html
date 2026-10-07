@@ -91,6 +91,93 @@ tailwind.config = {
   @media (max-width: 768px) {
     .hero-title { font-size: 2rem !important; }
   }
+/* ============== MOBILE RESPONSIVE FIXES ============== */
+
+/* Global overflow fix */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px) {
+  /* Container padding fix */
+  .max-w-7xl {
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  /* Hero title chhota karo */
+  .hero-title {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Search bar fix */
+  #heroSearch {
+    font-size: 14px !important;
+    padding: 12px 8px !important;
+  }
+  
+  .max-w-2xl {
+    max-width: 100% !important;
+    padding: 0 4px !important;
+  }
+  
+  .max-w-2xl button {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    white-space: nowrap;
+  }
+  
+  /* Stats numbers */
+  .font-display.text-2xl,
+  .font-display.text-3xl {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Class grid - 2 columns mobile par */
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .grid-cols-3 button {
+    font-size: 13px !important;
+    padding: 10px 4px !important;
+  }
+  
+  /* Newsletter fix */
+  .rounded-3xl {
+    border-radius: 1.5rem !important;
+    margin: 0 8px !important;
+    max-width: calc(100% - 16px) !important;
+  }
+  
+  /* Cards */
+  .card-hover {
+    max-width: 100% !important;
+  }
+  
+  /* Ad slots */
+  .ad-slot {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Header icons */
+  header .flex.items-center.gap-2 {
+    gap: 8px !important;
+  }
+  
+  header button.p-2 {
+    padding: 8px !important;
+  }
+}
 </style>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -119,36 +206,30 @@ tailwind.config = {
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex items-center justify-between h-16">
+      
       <!-- Logo -->
-      <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-2">
-     <button id="backBtn"
- onclick="goBack()"
-    class="fixed bottom-6 left-6 z-50 bg-brand-500 hover:bg-brand-600 text-white px-4 py-2   rounded-lg shadow-lg hidden">
-  ← Go Back
-  </button>
-        <div class="w-9 h-9 bg-brand-500 rounded-lg flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-        </div>
-        <div>
-          <div class="font-display font-bold text-xl text-gray-900 leading-none">EduHub</div>
-          <div class="text-[10px] text-gray-500 leading-none mt-0.5">Learn Smart, Grow Faster</div>
-        </div>
-      </a>
-
+<a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-1">
+  <img src="logo.png" alt="EduHub Logo" class="w-9 h-9 rounded-lg bg-white p-0.5 object-cover">
+  <div>
+    <div class="font-display font-bold text-xl text-gray-900 leading-none">EduHub</div>
+    <div class="text-[10px] text-gray-500 leading-none mt-0.5">Learn Smart, Grow Faster</div>
+  </div>
+</a>
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-1">
         <a href="#" onclick="navigateTo('home'); return false;" class="nav-link relative px-3 py-2 text-sm text-gray-700 hover:text-brand-600" data-page="home">Home</a>
         <a href="#" onclick="navigateTo('categories'); return false;" class="nav-link relative px-3 py-2 text-sm text-gray-700 hover:text-brand-600" data-page="categories">Categories</a>
         <a href="#" onclick="navigateTo('classwise'); return false;" class="nav-link relative px-3 py-2 text-sm text-gray-700 hover:text-brand-600" data-page="classwise">Class-wise</a>
         <a href="#" onclick="navigateTo('subjects'); return false;" class="nav-link relative px-3 py-2 text-sm text-gray-700 hover:text-brand-600" data-page="subjects">Subjects</a>
+        
         <div class="relative group">
           <button class="nav-link relative px-3 py-2 text-sm text-gray-700 hover:text-brand-600 flex items-center gap-1">
             Resources
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="absolute top-full left-0 mt-1 w-52 bg-white rounded-lg shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-            <a href="#" onclick="navigateTo('notes'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600">📝 Previous Year Question </a>
-            <a href="#" onclick="navigateTo('worksheets'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600">📋Solution & Notes </a>
+            <a href="#" onclick="navigateTo('notes'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600">📝 Previous Year Question</a>
+            <a href="#" onclick="navigateTo('worksheets'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600">📋 Worksheet</a>
             <a href="#" onclick="navigateTo('mcq'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600">✅ MCQ Practice</a>
           </div>
         </div>
@@ -161,24 +242,39 @@ tailwind.config = {
         <button onclick="openSearch()" class="p-2 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg" title="Search">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-        <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
-          <svg id="menuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg" aria-label="Menu">
+          <svg id="menuIconOpen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menuIconClose" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Nav -->
+    <!-- Mobile Nav Menu -->
     <div id="mobileMenu" class="hidden lg:hidden pb-4 border-t border-gray-100 pt-2">
       <div class="flex flex-col gap-1">
-        <a href="#" onclick="navigateTo('home'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Home</a>
-        <a href="#" onclick="navigateTo('categories'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Categories</a>
-        <a href="#" onclick="navigateTo('classwise'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Class-wise Resources</a>
-        <a href="#" onclick="navigateTo('subjects'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Subject-wise Resources</a>
-        <a href="#" onclick="navigateTo('notes'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">📝  Previous Year Question</a>
-        <a href="#" onclick="navigateTo('worksheets'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">📋 Solution & Notes</a>
-        <a href="#" onclick="navigateTo('mcq'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">✅ MCQ Practice Tests</a>
-        <a href="#" onclick="navigateTo('blog'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Blog</a>
-        <a href="#" onclick="navigateTo('contact'); return false;" class="px-3 py-2 text-sm text-gray-700 hover:bg-brand-50 rounded">Contact</a>
+        <a href="#" onclick="navigateTo('home'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">🏠 Home</a>
+        <a href="#" onclick="navigateTo('categories'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📂 Categories</a>
+        <a href="#" onclick="navigateTo('classwise'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">🎓 Class-wise</a>
+        <a href="#" onclick="navigateTo('subjects'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📚 Subjects</a>
+        
+        <div class="border-t border-gray-100 my-1"></div>
+        <div class="px-3 py-1 text-[10px] uppercase tracking-wider text-gray-400 font-semibold">Resources</div>
+        
+        <a href="#" onclick="navigateTo('notes'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📝 Previous Year Question</a>
+        <a href="#" onclick="navigateTo('worksheets'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📋 Worksheets</a>
+        <a href="#" onclick="navigateTo('mcq'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">✅ MCQ Practice</a>
+        <a href="#" onclick="navigateTo('game'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">🎮 Games</a>
+        
+        <div class="border-t border-gray-100 my-1"></div>
+        
+        <a href="#" onclick="navigateTo('blog'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📰 Blog</a>
+        <a href="#" onclick="navigateTo('contact'); closeMobileMenu(); return false;" class="px-3 py-2.5 text-sm text-gray-700 hover:bg-brand-50 rounded font-medium">📞 Contact</a>
       </div>
     </div>
   </div>
@@ -274,8 +370,8 @@ tailwind.config = {
           <div class="w-11 h-11 bg-brand-50 rounded-lg flex items-center justify-center text-xl">📘</div>
           <span class="badge bg-success-50 text-success-700">Free</span>
         </div>
-        <h3 class="font-semibold text-gray-900 mb-1">Class 10 Maths Notes</h3>
-        <p class="text-xs text-gray-500 mb-3">Complete NCERT solutions with chapter-wise explanations</p>
+        <h3 class="font-semibold text-gray-900 mb-1">All Class PYQ</h3>
+        <p class="text-xs text-gray-500 mb-3">Previous year question for class 8,9and 10 </p>
         <div class="flex items-center justify-between text-xs text-gray-500">
           <span>📄 124 pages</span>
           <span>⬇ 12.4k</span>
@@ -287,8 +383,8 @@ tailwind.config = {
           <div class="w-11 h-11 bg-success-50 rounded-lg flex items-center justify-center text-xl">📝</div>
           <span class="badge bg-brand-50 text-brand-700">PDF</span>
         </div>
-        <h3 class="font-semibold text-gray-900 mb-1">Science Solution & Notes</h3>
-        <p class="text-xs text-gray-500 mb-3">Practice worksheets for Class 9 with answer keys</p>
+        <h3 class="font-semibold text-gray-900 mb-1">Worksheets</h3>
+        <p class="text-xs text-gray-500 mb-3">Practice worksheets for All Class </p>
         <div class="flex items-center justify-between text-xs text-gray-500">
           <span>📄 48 pages</span>
           <span>⬇ 8.2k</span>
@@ -550,7 +646,7 @@ tailwind.config = {
     <nav class="text-xs text-gray-500 mb-4">
       <a href="#" onclick="navigateTo('home'); return false;" class="hover:text-brand-600">Home</a><span class="breadcrumb-sep"></span><span class="text-gray-900">Worksheets</span>
     </nav>
-    <h1 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-2">📋 Solution & Notes</h1>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-2">📋Worksheets</h1>
     <p class="text-gray-600 mb-6">Printable worksheets with answer keys</p>
 
     <div class="flex flex-wrap gap-2 mb-4">
@@ -772,10 +868,9 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 py-12">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <div>
-        <div class="flex items-center gap-2 mb-4">
+        <div class="flex items-center gap-1.5 mb-4">
           <div class="w-9 h-9 bg-brand-500 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
-          </div>
+           <img src="logo.png" alt="EduHub Logo" class="w-9 h-9 rounded-lg bg-white p-0.5">          </div>
           <div>
             <div class="font-display font-bold text-lg text-white">EduHub</div>
             <div class="text-[10px] text-gray-400">Learn Smart, Grow Faster</div>
@@ -848,31 +943,67 @@ const categories = [
   { icon: '🔬', name: 'Science', count: 1580, desc: 'Physics, Chemistry, Biology' },
   { icon: '📖', name: 'English', count: 980, desc: 'Grammar, Literature, Writing' },
   { icon: '🌍', name: 'Social Science', count: 1120, desc: 'History, Geography, Civics, Economics' },
-  { icon: '💻', name: 'Computer Science', count: 420, desc: 'Programming, IT, Digital Literacy' },
+  { icon: '💻', name: 'Computer', count: 420, desc: 'Programming, IT, Digital Literacy' },
   { icon: '🎨', name: 'Hindi', count: 760, desc: 'Vyakaran, Sahitya, Rachna' },
   { icon: '🕉️', name: 'Sanskrit', count: 120, desc: 'Mantra & Sanskrit  sloka ' },
  ];
 
 const subjects = ['Mathematics', 'Science', 'English', 'Social Science', 'Computer', 'Hindi', 'Sanskrit'];
 
-const latestResources = [
-  { type: 'Note', icon: '📘', title: 'Class 10 Maths previous year (2025) question', class: 10, subject: 'Mathematics', pages: 24, downloads: '3.2k', time: '2 hours ago' },
-  { type: 'Worksheet', icon: '📝', title: 'Class 9 Science  previous year (2025) question', class: 9, subject: 'Science', pages: 12, downloads: '1.8k', time: '5 hours ago' },
-  { type: 'Paper', icon: '📄', title: 'CBSE Class 10 English Core Sample Paper 2026', class: 10, subject: 'English', pages: 16, downloads: '5.4k', time: '1 day ago' },
-  { type: 'Note', icon: '📘', title: 'Class 8 maths  previous year (2025) question', class: 8, subject: 'Social Science', pages: 18, downloads: '2.1k', time: '1 day ago' },
-  { type: 'MCQ', icon: '✅', title: 'Class 10 Science  previous year (2025) question', class: 10, subject: 'Science', pages: 8, downloads: '4.6k', time: '2 days ago' },
-  { type: 'Worksheet', icon: '📝', title: 'Class 7 Mathematics - Fractions and Decimals', class: 7, subject: 'Mathematics', pages: 10, downloads: '1.5k', time: '2 days ago' }
-];
-
 const notes = [
-  {
+
+{
+    title: 'jac-class-8-social-science-2025',
+    subject: 'Social Science',
+    class: 8,
+    pages: 20,
+    size: '2.5 MB',
+    downloads: '0',
+    date: '2026-10-07',
+    pdf: 'pdfs/jac-class-8-social-science-2025.pdf'
+},
+
+{
+    title: 'jac-class-8-mathematics-2025',
+    subject: 'Mathematics',
+    class: 8,
+    pages: 20,
+    size: '2.5 MB',
+    downloads: '0',
+    date: '2026-10-07',
+    pdf: 'pdfs/jac-class-8-mathematics-2025.pdf'
+},
+
+{
+    title: 'jac-class-8-science-2025',
+    subject: 'Science',
+    class: 8,
+    pages: 25,
+    size: '2.5 MB',
+    downloads: '0',
+    date: '2026-10-07',
+    pdf: 'pdfs/jac-class-8-science-2025.pdf'
+},
+
+ {
     title: 'Class 10 Previous Science Question Paper set 1',
     subject: 'Science',
     class: 10,
     pages: 20,
     size: '2.5 MB',
+    date: '2026-10-05',
     downloads: '0',
-    pdf: 'pdfs/class 10 science previous year (2026) set 1.pdf' // ✅ NEW CODE (Points to your file)
+    pdf: 'pdfs/class 10 science previous year (2026) set 1.pdf'
+},
+  {
+    title: 'jac-class-8-hindi-2025',
+    subject: 'Hindi',
+    class: 8,
+    pages: 23,
+    size: '2.5 MB',
+    date: '2026-10-07',
+    downloads: '0',
+    pdf: 'pdfs/jac-class-8-hindi-2025.pdf' // ✅ NEW CODE (Points to your file)
   },
 {
     title: 'Class 10 Previous science Question Paper set 2',
@@ -881,17 +1012,17 @@ const notes = [
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/class 10 science previous year (2026) set 2.pdf' // ✅ NEW CODE (Points to your file)
-  },
+    date: '2026-10-05',
+    pdf: 'pdfs/class 10 science previous year (2026) set 2.pdf'   },
 {
     title: 'Class 10 Previous Sanskrit Question Paper ',
-    subject: '',
+    subject: 'Sanskrit',
     class: 10,
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/Sanskrit.pdf' // ✅ NEW CODE (Points to your file)
-  }, 
+    date: '2026-10-05',
+    pdf: 'pdfs/Sanskrit.pdf'   }, 
 {
     title: 'Class 10 Previous science Question Paper set 3',
     subject: 'Science',
@@ -899,7 +1030,8 @@ const notes = [
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/class 10 science previous year (2026) set 3.pdf' // ✅ NEW CODE (Points to your file)
+    date: '2026-10-05',
+    pdf: 'pdfs/class 10 science previous year (2026) set 3.pdf'
   },
 
 {
@@ -909,14 +1041,9 @@ const notes = [
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/class 10 science previous year (2026) set 5.pdf' // ✅ NEW CODE (Points to your file)
+    date: '2026-10-01',
+    pdf: 'pdfs/class 10 science previous year (2026) set 5.pdf' 
   },
-
-];
-const worksheets = [
-  
-    { title: 'Class 8 History - The Indian Constitution', level: 'Middle', subject: 'Social Science', class: 8, pages: 12, downloads: '4.8k' },
-  { title: 'Class 6 Maths - Knowing Our Numbers', level: 'Middle', subject: 'Mathematics', class: 6, pages: 10, downloads: '3.7k' },
 {
     title: 'CBSE Class 10 PYQs Past 10 Years Solved Papers All Subject',
     subject: 'All',
@@ -924,8 +1051,20 @@ const worksheets = [
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/CBSE Class 10 PYQs Past 10 Years Solved Papers All Subject.pdf' // ✅ NEW CODE (Points to your file)
-  },
+    pdf: 'pdfs/CBSE Class 10 PYQs Past 10 Years Solved Papers All Subject.pdf'   },
+
+];
+const worksheets = [
+
+  {
+    title: 'Science Class 8 All Chapter Shorts Notes',
+    subject: 'Science',
+    class: 8,
+    pages: 30,
+    size: '2.5 MB',
+    downloads: '0',
+    pdf: 'pdfs/Science Class 8 All Chapter Shorts Notes.pdf'   },
+
 {
     title: 'Class 10 Dust of Snow Solution and Notes',
     subject: 'English',
@@ -933,25 +1072,36 @@ const worksheets = [
     pages: 20,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/dust of snow class 10.pdf' // ✅ NEW CODE (Points to your file)
-  },
+    pdf: 'pdfs/dust of snow class 10.pdf' },
 { title: 'Carbon chapter all chemical equation',
     subject: 'Science',
     class: 10,
     pages: 3,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/carbon.pdf' // ✅ NEW CODE (Points to your file)
- },
+    pdf: 'pdfs/carbon.pdf'  },
 { title: 'Trigonometry  question',
     subject: 'Mathematics',
     class: 10,
     pages: 3,
     size: '2.5 MB',
     downloads: '0',
-    pdf: 'pdfs/carbon.pdf' // ✅ NEW CODE (Points to your file)
- },
+    pdf: 'pdfs/Trigonometry  question.pdf'  },
+{ title: 'SAMPLE QUESTION PAPER English class 10',
+    subject: 'English',
+    class: 10,
+    pages: 3,
+    size: '2.5 MB',
+    downloads: '0',
+    pdf: 'pdfs/SAMPLE QUESTION PAPER English class 10.pdf'  },
 
+{ title: 'SAMPLE QUESTION PAPER Maths class 10',
+    subject: 'Mathematics',
+    class: 10,
+    pages: 11,
+    size: '2.5 MB',
+    downloads: '0',
+    pdf: 'pdfs/SAMPLE QUESTION PAPER Maths class 10.pdf'  },
   ];
 
 const blogPosts = [
@@ -1106,35 +1256,74 @@ function navigateTo(page) {
   document.querySelectorAll(`.nav-link[data-page="${page}"]`).forEach(l => l.classList.add('active'));
   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('mobileMenu').classList.add('hidden');
+  
+  // Initialize game board when navigating to game page
+  if (page === 'game') {
+    setTimeout(initGame, 50);
+  }
 }
-
 function toggleMobileMenu() {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
+  const menu = document.getElementById('mobileMenu');
+  const iconOpen = document.getElementById('menuIconOpen');
+  const iconClose = document.getElementById('menuIconClose');
+  
+  menu.classList.toggle('hidden');
+  
+  if (menu.classList.contains('hidden')) {
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  } else {
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+  }
 }
 
+function closeMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const iconOpen = document.getElementById('menuIconOpen');
+  const iconClose = document.getElementById('menuIconClose');
+  
+  menu.classList.add('hidden');
+  iconOpen.classList.remove('hidden');
+  iconClose.classList.add('hidden');
+}
 // ============== RENDER FUNCTIONS ==============
 function renderLatestResources() {
   const el = document.getElementById('latestResources');
-  el.innerHTML = latestResources.map(r => `
-    <div class="card-hover flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl cursor-pointer" onclick="showToast('Opening resource...', '${r.title}')">
-      <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">${r.icon}</div>
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="badge bg-brand-50 text-brand-700">${r.type}</span>
-          <span class="text-xs text-gray-400">Class ${r.class}</span>
-        </div>
-        <h3 class="font-semibold text-sm text-gray-900 truncate">${r.title}</h3>
-        <div class="flex items-center gap-3 text-xs text-gray-500 mt-1">
-          <span>📄 ${r.pages} pages</span>
-          <span>⬇ ${r.downloads}</span>
-          <span>• ${r.time}</span>
-        </div>
+
+  // Notes aur Worksheets ko combine karo
+  const allResources = [
+    ...notes.map(n => ({...n, icon:'📘', type: 'Note'})),
+    ...worksheets.map(w => ({...w, icon:'📝', type: 'Worksheet'}))
+  ];
+
+  // Sabse naya (Newest) top par lane ke liye Date ke hisaab se sort karo
+  allResources.sort((a, b) => {
+    const dateA = new Date(a.date || '2020-01-01');
+    const dateB = new Date(b.date || '2020-01-01');
+    return dateB - dateA; // Newest date pehle aayega
+  });
+
+  // Top 5 latest resources lo
+  const latest = allResources.slice(0, 5);
+
+  el.innerHTML = latest.map(r => `
+    <div class="card-hover flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl">
+      <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center text-2xl">
+        ${r.icon}
       </div>
-      <button class="px-3 py-1.5 bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold rounded-lg flex-shrink-0">View</button>
+      <div class="flex-1">
+        <h3 class="font-semibold text-sm">${r.title}</h3>
+        <p class="text-xs text-gray-500">
+          Class ${r.class} • ${r.subject} • <span class="text-brand-500 font-medium">${r.type}</span>
+        </p>
+      </div>
+      <button onclick="downloadPDF('${r.pdf}')" class="px-3 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg text-xs font-semibold transition">
+        Open
+      </button>
     </div>
   `).join('');
 }
-
 function renderCategories() {
   const el = document.getElementById('categoriesGrid');
   el.innerHTML = categories.map(c => `
@@ -1152,12 +1341,20 @@ function renderCategories() {
 
 function renderClassResources(classNum) {
   const el = document.getElementById('classResources');
-  const filtered = [...notes, ...worksheets.map(w => ({...w, type: 'Worksheet'}))].filter(r => r.class === classNum);
+
+  const filtered = worksheets.filter(
+    r => r.class === classNum
+  );
+
   if (filtered.length === 0) {
-    el.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500">No resources found for this class. Check back soon!</div>';
+    el.innerHTML =
+    '<div class="col-span-full text-center py-12 text-gray-500">No resources found for this class.</div>';
     return;
   }
-  el.innerHTML = filtered.map(r => renderResourceCard(r)).join('');
+
+  el.innerHTML = filtered.map(r =>
+    renderResourceCard({...r, type:'Worksheet'})
+  ).join('');
 }
 
 function renderClassFilters(activeClass = 10) {
@@ -1178,12 +1375,20 @@ function updateClassFilter(c) {
 
 function renderSubjectResources(subject) {
   const el = document.getElementById('subjectResources');
-  const filtered = notes.filter(n => n.subject === subject);
+
+  const filtered = worksheets.filter(
+    r => r.subject === subject
+  );
+
   if (filtered.length === 0) {
-    el.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500">No resources found. Try another subject!</div>';
+    el.innerHTML =
+    '<div class="col-span-full text-center py-12 text-gray-500">No resources found.</div>';
     return;
   }
-  el.innerHTML = filtered.map(r => renderResourceCard(r)).join('');
+
+  el.innerHTML = filtered.map(r =>
+    renderResourceCard({...r, type:'Worksheet'})
+  ).join('');
 }
 
 function renderSubjectFilters(activeSubject = 'Mathematics') {
