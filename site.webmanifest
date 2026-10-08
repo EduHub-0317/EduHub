@@ -1,28 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub//</loc>
-    </url>
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub/pdfs/SAMPLE%20QUESTION%20PAPER%20English%20class%2010.pdf</loc>
-    </url>
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub/pdfs/dust%20of%20snow%20class%2010.pdf</loc>
-    </url>
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub/pdfs/carbon.pdf</loc>
-    </url>
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub/pdfs/Science%20Class%208%20All%20Chapter%20Shorts%20Notes.pdf</loc>
-    </url>
-
-    <url>
-        <loc>https://https://eduhub-0317.github.io/EduHub/pdfs/Trigonometry%20%20question.pdf</loc>
-    </url>
-
+<?xml version="1.0" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1" encoding="utf-8">
+  <url>
+    <loc>https://eduhub-0317.github.io/EduHub</loc>
+  </url>
+<url>
+    <loc>https://eduhub-0317.github.io/EduHub/pdfs/dust%20of%20snow%20class%2010.pdf</loc>
+  </url>
 </urlset>
